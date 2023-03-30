@@ -10,15 +10,4 @@
 
 ## Workaround
 
-By pointing the .wasm file on `astro.config.mjs` and run build, it does includes:
-
-```js
-export default defineConfig({
-  output: "server",
-  adapter: vercel({
-    includeFiles: [
-      "./node_modules/.pnpm/vscode-oniguruma@1.7.0/node_modules/vscode-oniguruma/release/onig.wasm",
-    ],
-  }),
-});
-```
+By pointing the .wasm file on `astro.config.mjs` and run build, it does includes (see the [astro.config.mjs](./astro.config.mjs))

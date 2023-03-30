@@ -14,5 +14,9 @@
     "@wooorm/starry-night": "2.0.0",
     "astro": "2.1.8",
     "hast-util-to-html": "8.0.4"
+  },
+  "devDependencies": {
+    "import-meta-resolve": "2.2.2",
+    "vscode-oniguruma": "1.7.0"
   }
 }

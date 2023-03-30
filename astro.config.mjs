@@ -1,14 +1,17 @@
 import { defineConfig } from "astro/config";
+import { resolve } from "import-meta-resolve";
 
 import vercel from "@astrojs/vercel/serverless";
+
+const vsCodeOnigurumaPath = new URL(
+  "onig.wasm",
+  await resolve("vscode-oniguruma", import.meta.url)
+).pathname;
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
   adapter: vercel({
-    includeFiles: [
-      // Adding this fixes the problem
-      // "./node_modules/.pnpm/vscode-oniguruma@1.7.0/node_modules/vscode-oniguruma/release/onig.wasm",
-    ],
+    // includeFiles: [vsCodeOnigurumaPath],
   }),
 });
